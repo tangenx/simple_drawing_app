@@ -68,3 +68,11 @@ class LineTool implements DrawingTool {
     );
   }
 }
+
+// This tool does nothing. Really nothing.
+class EmptyTool implements DrawingTool {
+  const EmptyTool();
+
+  @override
+  void paint(Canvas canvas, DrawingSegment drawingSegment) {}
+}
