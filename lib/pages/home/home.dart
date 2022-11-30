@@ -30,9 +30,9 @@ class HomePage extends StatelessWidget {
           ],
           child: BlocBuilder<DrawingBloc, DrawingState>(
             builder: (context, state) {
-              final drawingBloc = context.watch<DrawingBloc>();
-              final toolBloc = context.watch<ToolBloc>();
-              final colorBloc = context.watch<ColorBloc>();
+              final drawingBloc = context.read<DrawingBloc>();
+              final toolBloc = context.read<ToolBloc>();
+              final colorBloc = context.read<ColorBloc>();
 
               return GestureDetector(
                 onPanDown: (details) {
