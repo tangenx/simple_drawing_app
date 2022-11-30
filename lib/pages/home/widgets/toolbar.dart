@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:simple_drawing_app/shared/widgets/button_shadow_container.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_drawing_app/bloc/tool/tool_bloc.dart';
+import 'package:simple_drawing_app/shared/drawing/tool.dart';
+import 'package:simple_drawing_app/pages/home/widgets/color_button.dart';
+import 'package:simple_drawing_app/pages/home/widgets/tool_button.dart';
 
 class DrawingToolbar extends StatelessWidget {
   const DrawingToolbar({super.key});
@@ -13,36 +17,36 @@ class DrawingToolbar extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ButtonShadowContainer(
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.rectangle_outlined,
-              ),
-              style: IconButton.styleFrom(
-                backgroundColor: Colors.white,
-                fixedSize: const Size(50, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-            ),
+          const ColorButton(),
+          const SizedBox(height: 8),
+          ToolButton(
+            onPressed: () {
+              context
+                  .read<ToolBloc>()
+                  .add(const ToolEvent.toolChanged(tool: BrushTool()));
+            },
+            icon: Icons.brush,
+            tool: const BrushTool(),
           ),
           const SizedBox(height: 8),
-          ButtonShadowContainer(
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.rectangle_outlined,
-              ),
-              style: IconButton.styleFrom(
-                backgroundColor: Colors.white,
-                fixedSize: const Size(50, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-            ),
+          ToolButton(
+            onPressed: () {
+              context
+                  .read<ToolBloc>()
+                  .add(const ToolEvent.toolChanged(tool: RectangleTool()));
+            },
+            icon: Icons.rectangle_outlined,
+            tool: const RectangleTool(),
+          ),
+          const SizedBox(height: 8),
+          ToolButton(
+            onPressed: () {
+              context
+                  .read<ToolBloc>()
+                  .add(const ToolEvent.toolChanged(tool: LineTool()));
+            },
+            icon: Icons.remove,
+            tool: const LineTool(),
           ),
         ],
       ),

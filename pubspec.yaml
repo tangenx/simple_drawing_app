@@ -34,6 +34,9 @@ dependencies:
   # Annotations for Freezed
   freezed_annotation: ^2.2.0
 
+  # Color picker
+  flutter_colorpicker: ^1.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

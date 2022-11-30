@@ -4,12 +4,14 @@ class ButtonShadowContainer extends StatelessWidget {
   final Widget child;
   final double? height;
   final double? width;
+  final Color? shadowColor;
 
   const ButtonShadowContainer({
     Key? key,
     required this.child,
     this.height,
     this.width,
+    this.shadowColor,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,7 @@ class ButtonShadowContainer extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: shadowColor ?? Colors.grey.withOpacity(0.2),
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),
