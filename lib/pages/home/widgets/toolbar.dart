@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_drawing_app/bloc/drawing/drawing_bloc.dart';
 import 'package:simple_drawing_app/bloc/tool/tool_bloc.dart';
 import 'package:simple_drawing_app/shared/drawing/tool.dart';
 import 'package:simple_drawing_app/pages/home/widgets/color_button.dart';
@@ -47,6 +48,14 @@ class DrawingToolbar extends StatelessWidget {
             },
             icon: Icons.remove,
             tool: const LineTool(),
+          ),
+          const SizedBox(height: 8),
+          ToolButton(
+            onPressed: () {
+              context.read<DrawingBloc>().add(const DrawingEvent.clearCanvas());
+            },
+            icon: Icons.delete_outline,
+            tool: const EmptyTool(),
           ),
         ],
       ),

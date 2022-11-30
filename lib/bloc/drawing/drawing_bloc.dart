@@ -29,5 +29,7 @@ class DrawingBloc extends Bloc<DrawingEvent, DrawingState> {
       emit(DrawingState.initial());
       emit(DrawingState(drawingSegments: newDrawingSegments));
     });
+
+    on<ClearCanvasEvent>((event, emit) => emit(DrawingState.initial()));
   }
 }

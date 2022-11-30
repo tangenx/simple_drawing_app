@@ -4,8 +4,7 @@ part of 'drawing_bloc.dart';
 class DrawingEvent with _$DrawingEvent {
   const factory DrawingEvent.addDrawingSegment(
       {required DrawingSegment segment}) = AddDrawingSegmentEvent;
-  // const factory DrawingEvent.updateDrawingSegmentPath(
-  //     {required Offset offset}) = UpdateDrawingSegmentPathEvent;
   const factory DrawingEvent.updateDrawingSegmentOffset(
       {required Offset offset}) = UpdateDrawingSegmentOffsetEvent;
+  const factory DrawingEvent.clearCanvas() = ClearCanvasEvent;
 }

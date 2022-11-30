@@ -146,18 +146,21 @@ mixin _$DrawingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(DrawingSegment segment) addDrawingSegment,
     required TResult Function(Offset offset) updateDrawingSegmentOffset,
+    required TResult Function() clearCanvas,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(DrawingSegment segment)? addDrawingSegment,
     TResult? Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult? Function()? clearCanvas,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(DrawingSegment segment)? addDrawingSegment,
     TResult Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult Function()? clearCanvas,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -166,6 +169,7 @@ mixin _$DrawingEvent {
     required TResult Function(AddDrawingSegmentEvent value) addDrawingSegment,
     required TResult Function(UpdateDrawingSegmentOffsetEvent value)
         updateDrawingSegmentOffset,
+    required TResult Function(ClearCanvasEvent value) clearCanvas,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -173,6 +177,7 @@ mixin _$DrawingEvent {
     TResult? Function(AddDrawingSegmentEvent value)? addDrawingSegment,
     TResult? Function(UpdateDrawingSegmentOffsetEvent value)?
         updateDrawingSegmentOffset,
+    TResult? Function(ClearCanvasEvent value)? clearCanvas,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -180,6 +185,7 @@ mixin _$DrawingEvent {
     TResult Function(AddDrawingSegmentEvent value)? addDrawingSegment,
     TResult Function(UpdateDrawingSegmentOffsetEvent value)?
         updateDrawingSegmentOffset,
+    TResult Function(ClearCanvasEvent value)? clearCanvas,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -270,6 +276,7 @@ class _$AddDrawingSegmentEvent implements AddDrawingSegmentEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(DrawingSegment segment) addDrawingSegment,
     required TResult Function(Offset offset) updateDrawingSegmentOffset,
+    required TResult Function() clearCanvas,
   }) {
     return addDrawingSegment(segment);
   }
@@ -279,6 +286,7 @@ class _$AddDrawingSegmentEvent implements AddDrawingSegmentEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(DrawingSegment segment)? addDrawingSegment,
     TResult? Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult? Function()? clearCanvas,
   }) {
     return addDrawingSegment?.call(segment);
   }
@@ -288,6 +296,7 @@ class _$AddDrawingSegmentEvent implements AddDrawingSegmentEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(DrawingSegment segment)? addDrawingSegment,
     TResult Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult Function()? clearCanvas,
     required TResult orElse(),
   }) {
     if (addDrawingSegment != null) {
@@ -302,6 +311,7 @@ class _$AddDrawingSegmentEvent implements AddDrawingSegmentEvent {
     required TResult Function(AddDrawingSegmentEvent value) addDrawingSegment,
     required TResult Function(UpdateDrawingSegmentOffsetEvent value)
         updateDrawingSegmentOffset,
+    required TResult Function(ClearCanvasEvent value) clearCanvas,
   }) {
     return addDrawingSegment(this);
   }
@@ -312,6 +322,7 @@ class _$AddDrawingSegmentEvent implements AddDrawingSegmentEvent {
     TResult? Function(AddDrawingSegmentEvent value)? addDrawingSegment,
     TResult? Function(UpdateDrawingSegmentOffsetEvent value)?
         updateDrawingSegmentOffset,
+    TResult? Function(ClearCanvasEvent value)? clearCanvas,
   }) {
     return addDrawingSegment?.call(this);
   }
@@ -322,6 +333,7 @@ class _$AddDrawingSegmentEvent implements AddDrawingSegmentEvent {
     TResult Function(AddDrawingSegmentEvent value)? addDrawingSegment,
     TResult Function(UpdateDrawingSegmentOffsetEvent value)?
         updateDrawingSegmentOffset,
+    TResult Function(ClearCanvasEvent value)? clearCanvas,
     required TResult orElse(),
   }) {
     if (addDrawingSegment != null) {
@@ -411,6 +423,7 @@ class _$UpdateDrawingSegmentOffsetEvent
   TResult when<TResult extends Object?>({
     required TResult Function(DrawingSegment segment) addDrawingSegment,
     required TResult Function(Offset offset) updateDrawingSegmentOffset,
+    required TResult Function() clearCanvas,
   }) {
     return updateDrawingSegmentOffset(offset);
   }
@@ -420,6 +433,7 @@ class _$UpdateDrawingSegmentOffsetEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(DrawingSegment segment)? addDrawingSegment,
     TResult? Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult? Function()? clearCanvas,
   }) {
     return updateDrawingSegmentOffset?.call(offset);
   }
@@ -429,6 +443,7 @@ class _$UpdateDrawingSegmentOffsetEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(DrawingSegment segment)? addDrawingSegment,
     TResult Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult Function()? clearCanvas,
     required TResult orElse(),
   }) {
     if (updateDrawingSegmentOffset != null) {
@@ -443,6 +458,7 @@ class _$UpdateDrawingSegmentOffsetEvent
     required TResult Function(AddDrawingSegmentEvent value) addDrawingSegment,
     required TResult Function(UpdateDrawingSegmentOffsetEvent value)
         updateDrawingSegmentOffset,
+    required TResult Function(ClearCanvasEvent value) clearCanvas,
   }) {
     return updateDrawingSegmentOffset(this);
   }
@@ -453,6 +469,7 @@ class _$UpdateDrawingSegmentOffsetEvent
     TResult? Function(AddDrawingSegmentEvent value)? addDrawingSegment,
     TResult? Function(UpdateDrawingSegmentOffsetEvent value)?
         updateDrawingSegmentOffset,
+    TResult? Function(ClearCanvasEvent value)? clearCanvas,
   }) {
     return updateDrawingSegmentOffset?.call(this);
   }
@@ -463,6 +480,7 @@ class _$UpdateDrawingSegmentOffsetEvent
     TResult Function(AddDrawingSegmentEvent value)? addDrawingSegment,
     TResult Function(UpdateDrawingSegmentOffsetEvent value)?
         updateDrawingSegmentOffset,
+    TResult Function(ClearCanvasEvent value)? clearCanvas,
     required TResult orElse(),
   }) {
     if (updateDrawingSegmentOffset != null) {
@@ -480,4 +498,115 @@ abstract class UpdateDrawingSegmentOffsetEvent implements DrawingEvent {
   @JsonKey(ignore: true)
   _$$UpdateDrawingSegmentOffsetEventCopyWith<_$UpdateDrawingSegmentOffsetEvent>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ClearCanvasEventCopyWith<$Res> {
+  factory _$$ClearCanvasEventCopyWith(
+          _$ClearCanvasEvent value, $Res Function(_$ClearCanvasEvent) then) =
+      __$$ClearCanvasEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearCanvasEventCopyWithImpl<$Res>
+    extends _$DrawingEventCopyWithImpl<$Res, _$ClearCanvasEvent>
+    implements _$$ClearCanvasEventCopyWith<$Res> {
+  __$$ClearCanvasEventCopyWithImpl(
+      _$ClearCanvasEvent _value, $Res Function(_$ClearCanvasEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ClearCanvasEvent implements ClearCanvasEvent {
+  const _$ClearCanvasEvent();
+
+  @override
+  String toString() {
+    return 'DrawingEvent.clearCanvas()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearCanvasEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DrawingSegment segment) addDrawingSegment,
+    required TResult Function(Offset offset) updateDrawingSegmentOffset,
+    required TResult Function() clearCanvas,
+  }) {
+    return clearCanvas();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DrawingSegment segment)? addDrawingSegment,
+    TResult? Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult? Function()? clearCanvas,
+  }) {
+    return clearCanvas?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DrawingSegment segment)? addDrawingSegment,
+    TResult Function(Offset offset)? updateDrawingSegmentOffset,
+    TResult Function()? clearCanvas,
+    required TResult orElse(),
+  }) {
+    if (clearCanvas != null) {
+      return clearCanvas();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddDrawingSegmentEvent value) addDrawingSegment,
+    required TResult Function(UpdateDrawingSegmentOffsetEvent value)
+        updateDrawingSegmentOffset,
+    required TResult Function(ClearCanvasEvent value) clearCanvas,
+  }) {
+    return clearCanvas(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddDrawingSegmentEvent value)? addDrawingSegment,
+    TResult? Function(UpdateDrawingSegmentOffsetEvent value)?
+        updateDrawingSegmentOffset,
+    TResult? Function(ClearCanvasEvent value)? clearCanvas,
+  }) {
+    return clearCanvas?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddDrawingSegmentEvent value)? addDrawingSegment,
+    TResult Function(UpdateDrawingSegmentOffsetEvent value)?
+        updateDrawingSegmentOffset,
+    TResult Function(ClearCanvasEvent value)? clearCanvas,
+    required TResult orElse(),
+  }) {
+    if (clearCanvas != null) {
+      return clearCanvas(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClearCanvasEvent implements DrawingEvent {
+  const factory ClearCanvasEvent() = _$ClearCanvasEvent;
 }
